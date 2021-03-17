@@ -49,7 +49,7 @@
 
 .ex-4-square:hover {
     transition: 2s;
-    width: 0px;
+    opacity: 0;
 }
 
 /*es 5*/
@@ -123,6 +123,13 @@
 
 .ex-10-icon {
     font-size: 60px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(1turn);
+    }
 }
 
 /*es 11*/
@@ -132,10 +139,16 @@
 }
 
 .ex-11-icon:hover {
-
+    animation: spin75 1s linear;
 }
 
-/*es 10*/
+@keyframes spin75 {
+    75% {
+        transform: rotate(0.75turn);
+    }
+}
+
+/*fine es 11*/
 
 .ex-12-button, .ex-13-button {
     position: relative;
@@ -151,11 +164,35 @@
     text-decoration: none;
 }
 
-.ex-12-button, .ex-13-button {
+/*es 12*/
 
+.ex-12-button:hover .ex-12-top-white {
+    animation: movetop 1s linear;
 }
 
-/*es 12 e 13*/
+@keyframes movetop {
+    0% {
+        left: 10%;
+    }
+    50% {
+        left: calc(100% - 60px);
+    }
+}
+
+.ex-12-button:hover .ex-12-bottom-white {
+    animation: movebottom 1s linear;
+}
+
+@keyframes movebottom {
+    0% {
+        right: 20%;
+    }
+    50% {
+        right: calc(100% - 60px);
+    }
+}
+
+/*fine es 12*/
 
 .ex-12-top-white, .ex-13-top-white {
     position: absolute;
@@ -166,12 +203,6 @@
     height: 20px;
 }
 
-.ex-12-top-white, .ex-13-top-white {
-
-}
-
-/*es 12 e 13*/
-
 .ex-12-bottom-white, .ex-13-bottom-white {
     position: absolute;
     bottom: -10px;
@@ -181,6 +212,55 @@
     height: 20px;
 }
 
-.ex-12-bottom-white, .ex-13-bottom-white {
+/*es 13*/
 
+.ex-13-button:hover .ex-13-top-white {
+    animation: movetopall 3s linear;
+}
+@keyframes movetopall {
+    0% {
+        left: 10%;
+        top: -10px;
+    }
+    30% {
+        left: calc(100% - 30px);
+        top: -10px;
+    }
+    45% {
+        left: calc(100% - 30px);
+        top: 100%;
+    }
+    75% {
+        left: 0;
+        top: 100%;
+    }
+    90% {
+        left: -15px;
+        top: -10px;
+    }
+}
+.ex-13-button:hover .ex-13-bottom-white {
+    animation: movebottomall 3s linear;
+}
+@keyframes movebottomall {
+    0% {
+        bottom: -10px;
+        right: 20%;
+    }
+    30% {
+        right: calc(100% - 30px);
+        bottom: -10px;
+    }
+    45% {
+        right: calc(100% - 30px);
+        bottom: 100%;
+    }
+    75% {
+        right: 0;
+        bottom: 100%;
+    }
+    90% {
+        right: -15px;
+        bottom: -10px;
+    }
 }
